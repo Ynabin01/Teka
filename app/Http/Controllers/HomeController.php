@@ -76,8 +76,8 @@ class HomeController extends Controller
         {
             $view = 'website.pages.folder';
             $folders = Navigation::where('alias',$alias)->first()->childs;
-            $teams_id = $teams->id;
-            $teams = Navigationitems::where('navigation_id',$teams_id)->get();
+            // $teams_id = $teams->id;
+            // $teams = Navigationitems::where('navigation_id',$teams_id)->get();
 
             return view($view, [
                 'frontend_helper' => $frontendHelper,
@@ -199,6 +199,20 @@ class HomeController extends Controller
                 'teams' => $teams,
             ]);
 
+        }
+
+        if($page_type=="Projects")
+        {
+            $view = 'website.pages.project';
+            $project = Navigation::where('alias',$alias)->first();
+            return view($view, [
+                'frontend_helper' => $frontendHelper,
+                'settings' => $settings,
+                'sliders' => $sliders,
+                'menus' => $menus,
+                'page' => $page,
+                'project' => $project,
+            ]);
         }
 
         return view($view, [
