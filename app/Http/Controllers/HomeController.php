@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-
 use App\Helpers\FrontendHelper;
 use App\Models\GlobalSetting;
 use App\Models\Navigation;
@@ -77,8 +76,8 @@ class HomeController extends Controller
         {
             $view = 'website.pages.folder';
             $folders = Navigation::where('alias',$alias)->first()->childs;
-            // $teams_id = $teams->id;
-            // $teams = Navigationitems::where('navigation_id',$teams_id)->get();
+            $teams_id = $teams->id;
+            $teams = Navigationitems::where('navigation_id',$teams_id)->get();
 
             return view($view, [
                 'frontend_helper' => $frontendHelper,
@@ -199,6 +198,7 @@ class HomeController extends Controller
                 'page' => $page,
                 'teams' => $teams,
             ]);
+
         }
 
         return view($view, [
