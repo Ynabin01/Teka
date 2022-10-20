@@ -14,15 +14,15 @@
                                 <a href="#"><i
                                             class="fas fa-map-marker-alt"></i><span>{{ $settings->website_full_address }}</span></a>
                                 <a href="#"><i class="fas fa-phone-volume"></i><span>{{ $settings->phone }}</span></a>
-                                <a href="#"><i class="fas fa-envelope"></i><span> {{ $settings->site_email }}</span></a>
+                                <a href="#"><i class="fas fa-envelope"></i><span> {{ $settings->site_email  }}</span></a>
                             </div>
                         </div>
                     </div>
                     <div class="col-xl-6 col-md-6 col-sm-12">
                         <div role="form" class="wpcf7" id="wpcf7-f59-o1" lang="en-US" dir="ltr">
                             <div class="screen-reader-response"></div>
-                            <form action="" method="post" class="wpcf7-form" novalidate="novalidate">
-
+                            <form action="{{ route('contactstore') }}" method="POST" class="wpcf7-form" novalidate="novalidate"  enctype='multipart/form-data'>
+                                @csrf
                                 <p><label> Your Name (required)<br>
                                         <span class="wpcf7-form-control-wrap your-name">
                                     <input type="text" name="name" class="wpcf7-form-control wpcf7-text ">
@@ -37,7 +37,7 @@
                                 </p>
                                 <p><label> Subject<br>
                                         <span class="wpcf7-form-control-wrap your-subject">
-                                    <input type="text" name="subject" value="" class="wpcf7-form-control wpcf7-text">
+                                    <input type="text" name="number" value="" class="wpcf7-form-control wpcf7-text">
                                 </span>
                                     </label>
                                 </p>

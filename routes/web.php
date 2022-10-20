@@ -10,6 +10,8 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+use App\Http\Controllers\JobController;
+use App\Http\Controllers\ContactController;
 
 Route::get('/', [
         'as' => 'website.home',
@@ -31,6 +33,34 @@ Route::group(['middleware' => ['web','auth:admin'],'prefix' => config('frw.uri')
 
     Route::get('/navigation-list/{category}', 'Admin\NavigationController@index');
     Route::get('/navigation-list/{category}/create', 'Admin\NavigationController@create');
+    //page type
+    Route::resource('/pageType', 'Admin\PageTypeController');
+    //photo gallery
+    Route::get('/navigation-list/{category}/{id}/showList', 'Admin\NavigationController@showMediaList');
+    Route::get('/navigation-list/{category}/{id}/showList/create', 'Admin\NavigationController@addMedia');
+    Route::post('/navigation-list/{category}/{id}/addAlbum', 'Admin\NavigationController@storeAlbum');
+    Route::get('/navigation-list/media/{id}/delete', 'Admin\NavigationController@deleteMedia');
+    Route::post('/navigation-list/media/{id}/update', 'Admin\NavigationController@updateMedia');
+
+//................................customized my MD for Job.............
+Route::get('/contact/{slug}',[ContactController::class,'Contactelete'])->name('contactDelete');
+Route::get('/job/{category}/{id}/create','JobController@AddJob')->name("AddJob");
+Route::get('/job/{category}/create','JobController@AddJob')->name("AddJob");
+Route::post('/jobstore/{category}', 'JobController@store')->name("AddJob1");
+Route::post('/jobstore/{category}/{id}', 'JobController@store')->name("AddJob2");
+Route::get('/jobedit/{category}/{id}', 'JobController@edit')->name("jobedit");
+Route::post('/jobupdate/{category}/{id}','JobController@JobUpdate');
+Route::get('/job/delete-banner-image/{category}/{id}/deleteimage3','JobController@deleteBannerImage')->name('deleteBannerImage');
+Route::get('/job-list', 'JobController@jobList')->name("joblist");
+Route::get('/applied-job-list', 'ContactController@AppliedJob')->name("AppliedJob");
+
+//-----------------------------------------//
+Route::POST('jobapply/store/{slug}',[ContactController::class,'ContactStore'])->name('storeapply');
+Route::get('/jobdetail/{jobslug}',[HomeController::class,'singlePage'])->name('single_job');
+Route::get('/jobapply/{jobslug}',[ContactController::class,'jobApply'])->name('jobapply');
+Route::get('/contact',[ContactController::class,'Contact'])->name('contact');
+Route::POST('contact/store',[ContactController::class,'ContactStore'])->name('contactstore');
+
     //page type
     Route::resource('/pageType', 'Admin\PageTypeController');
     //photo gallery
@@ -67,6 +97,13 @@ Route::group(['middleware' => ['web','auth:admin'],'prefix' => config('frw.uri')
     Route::put('/navigation-list/{id}', 'Admin\NavigationController@update_status')->name('update_status');
 
 });
+
+Route::get('/home', function () {
+    return redirect('/');
+ });
+ Route::get('/contact-us', 'HomeController@ContactUs')->name('ContactUs');
+Route::get('/{menu}', 'HomeController@Category')->name('Category');
+Route::get('/{menu}/{submenu}', 'HomeController@SubCategory')->name('SubCategory');
 
 Route::get('/{alias}', [
     'as' =>'pages',

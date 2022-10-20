@@ -17,7 +17,7 @@
     <link href="{{asset('website/assets/library/owlcarousel/css/owl.theme.default.min.css')}}" rel="stylesheet" type="text/css">
     <link href="{{asset('website/assets/css/animate.css')}}" rel="stylesheet" type="text/css">
     <link href="{{asset('website/assets/library/prettyPhoto/css/prettyPhoto.css')}}" rel="stylesheet" type="text/css">
-
+    @yield('custom-css')
     <link href="{{asset('website/assets/css/style.css')}}" type="text/css" rel="stylesheet"/>
 </head>
 
@@ -34,6 +34,7 @@
 <script src="{{asset('website/assets/library/parallex/parallax.min.js')}}"></script>
 <script src="{{asset('website/assets/js/jquery.isotope.js')}}"></script>
 <script src="{{asset('website/assets/library/prettyPhoto/js/jquery.prettyPhoto.js')}}"></script>
+@yield('custom-js')
 <script src="{{asset('website/assets/js/main.js')}}"></script>
 </body>
 </html>

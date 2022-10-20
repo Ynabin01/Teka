@@ -131,4 +131,30 @@
             </div>
         </div>
     </section>
+
+    <section class="business_bliss_client_logo">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <h2 class="section-title">
+                        Our Donors and Partners
+                    </h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="owl-carousel owl-theme client_logo">
+                        @if (isset($partners))
+                            @foreach ($partners as $partner)
+                                <div class="item">
+                                    <img src="/uploads/banner_image/{{ $partner->banner_image  }}" alt="" class="img-fluid ">
+                                </div>
+                            @endforeach
+                        @endif
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
 @endsection
