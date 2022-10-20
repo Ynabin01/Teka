@@ -59,6 +59,7 @@ class HomeController extends Controller
                 if($page_type=='project'){ //"this is category/notGroup";
                     $page_type = "project";
                 }
+
             }
 
             else{
@@ -68,6 +69,7 @@ class HomeController extends Controller
         else{
             $page_type = null;
         }
+
         if($page_type=="Folder Gallery")
         {
             $view = 'website.pages.folder';
@@ -84,7 +86,7 @@ class HomeController extends Controller
                 'folders' => $folders,
             ]);
         }
-        else if($page_type=="Normal" || $page_type=='Projects')
+        else if($page_type=="Normal" )
         {
             $view = 'website.pages.normal';
             $normal = Navigation::where('alias',$alias)->first();
@@ -95,6 +97,7 @@ class HomeController extends Controller
                 'menus' => $menus,
                 'page' => $page,
                 'normal' => $normal,
+
             ]);
         }
         else if($page_type=="Team")
@@ -246,7 +249,7 @@ class HomeController extends Controller
             'settings' => $settings,
             'menus' => $menus,
             'sliders' => $sliders,
-            
+
         ]);
     }
 }
