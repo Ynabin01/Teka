@@ -35,6 +35,7 @@ class HomeController extends Controller
     }
     public function Category($menu, FrontendHelper $frontendHelper)
     {
+
         $alias = $menu;
         $settings = GlobalSetting::where('id', 1)->first();
         $sliders = Navigation::where('page_type', 'Slider')->first();
@@ -69,7 +70,8 @@ class HomeController extends Controller
         else{
             $page_type = null;
         }
-
+// / for page return-------
+        //   return $page_type;
         if($page_type=="Folder Gallery")
         {
             $view = 'website.pages.folder';
@@ -86,7 +88,7 @@ class HomeController extends Controller
                 'folders' => $folders,
             ]);
         }
-        else if($page_type=="Normal" )
+        else if($page_type=="Normal" || $page_type=="Projects" )
         {
             $view = 'website.pages.normal';
             $normal = Navigation::where('alias',$alias)->first();
@@ -147,6 +149,7 @@ class HomeController extends Controller
         else{
             return redirect('/');
         }
+
     }
     public function SubCategory($menu,$submenu, FrontendHelper $frontendHelper)
     {
