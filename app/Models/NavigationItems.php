@@ -10,7 +10,7 @@ class NavigationItems extends Model
     protected $fillable = [
     	'navigation_id','sort','name','name_nepali','content','content_nepali','file','link','extra_one','extra_two'
     ];
- 
+
     public function navigation(){
 		return $this->belongsTo('App\Models\Navigation');
 	}

@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Helpers\FrontendHelper;
 use App\Models\GlobalSetting;
 use App\Models\Navigation;
 use App\Admin;
-use App\Models\Navigationitems;
+use App\Models\NavigationItems;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
