@@ -4,8 +4,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12">
+                    <br>
+                    <br>
                     <h2 class="section-title">
-                        Our Team
+                        {{ $page->nav_name }}
                     </h2>
                 </div>
             </div>
@@ -15,7 +17,8 @@
                 @foreach ($teams->childs as $team)
                     <div class="col-lg-4 col-md-4 col-sm-12">
                         <div class="box">
-                            <figure><img src="/uploads/banner_image/{{ $team->banner_image ?? '' }}" alt="" width="800" height="800">
+                            <figure><img src="/uploads/banner_image/{{ $team->banner_image ?? '' }}" alt=""
+                                    width="800" height="800">
                                 <div class="overlay"></div>
                                 <a href="" class="link-icon"><i class="fas fa-link"></i></a>
                             </figure>
@@ -29,8 +32,4 @@
             </div>
         </div>
     </div>
-
-
-
-
 @endsection
