@@ -6,7 +6,7 @@ use App\Helpers\FrontendHelper;
 use App\Models\GlobalSetting;
 use App\Models\Navigation;
 use App\Admin;
-use App\Models\Navigationitems;
+use App\Models\NavigationItems;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -57,8 +57,8 @@ class HomeController extends Controller
                 if($page_type=='Team'){ //"this is category/notGroup";
                     $page_type = "Team";
                 }
-                if($page_type=='project'){ //"this is category/notGroup";
-                    $page_type = "project";
+                if($page_type=='Projects'){ //"this is category/notGroup";
+                    $page_type = "Folder Projects";
                 }
 
             }
@@ -71,7 +71,7 @@ class HomeController extends Controller
             $page_type = null;
         }
 // / for page return-------
-        //   return $page_type;
+        //  return $page_type;
         if($page_type=="Folder Gallery")
         {
             $view = 'website.pages.folder';
@@ -116,7 +116,7 @@ class HomeController extends Controller
             ]);
         }
 
-               else if($page_type=="Photo Gallery")
+        else if($page_type=="Photo Gallery")
         {
             $view = 'website.pages.gallery';
             $teams = Navigation::where('alias',$alias)->first();
@@ -132,7 +132,7 @@ class HomeController extends Controller
                 'photos' => $photos,
             ]);
         }
-        else if($page_type=="Projects")
+        else if($page_type=="Folder Projects")
         {
             $view = 'website.pages.project';
             $project = Navigation::where('alias',$alias)->first();
