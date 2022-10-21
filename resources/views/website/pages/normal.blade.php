@@ -12,7 +12,9 @@
                             <h2 class="section-title">
                                 About Teka Samuha Nepal
                             </h2>
-                            <h3>Who We Are?</h3>
+
+                        @php echo $normal->short_content; @endphp
+                            {{-- <h3>Who We Are?</h3>
                             <p>Teka Samuha Nepal (TSN) is a non- governmental, non-profit organization dedicated for
                                 biodiversity conservation and sustainable living.</p>
                             <h3> How We Work?</h3>
@@ -26,8 +28,7 @@
                             <p>
                                 Teka Samuha Nepal (TSN) is a non- governmental, non-profit organization run by a group of
                                 committed professionals dedicated for biodiversity conservation and sustainable living. It
-                                is
-                                registered in District Administration Office (DAO) Kathmandu since 1997 (B.S. 2054) and
+                                is registered in District Administration Office (DAO) Kathmandu since 1997 (B.S. 2054) and
                                 affiliated with Social Welfare Council, Nepal.<br>
                                 Teka has been collaborating with national and international stakeholders for biodiversity
                                 conservation. Our past effort includes collaborating to publish annual bulletin &quot;The
@@ -53,14 +54,11 @@
                                 b) Enhance environment education level among local communities and youth.<br>
                                 c) Improve sustainable livelihood of communities.<br>
                                 d) Strengthen network and collaboration with government and non-government
-                                organization.<br></p>
+                                organization.<br></p> --}}
                         </div>
                     </div>
+                </div>
 
-
-                </div>
-                </div>
-                </div>
             </section>
         @else
             <section>
@@ -73,7 +71,7 @@
                                 </figure>
                             @endif
                             <h4>{{ $page->nav_name }}</h4>
-                            <p>{!! $page->long_content !!}</p>
+                            <p>{!! $page->short_content !!}</p>
                         </div>
                     </div>
                 </div>

@@ -215,6 +215,8 @@ class HomeController extends Controller
             ]);
         }
 
+
+
         return view($view, [
             'frontend_helper' => $frontendHelper,
             'settings' => $settings,

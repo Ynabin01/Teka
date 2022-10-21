@@ -18,7 +18,7 @@
                     <p>We identify and work in the priority conservation areas by conducting participatory research and
                         engage the needy communities to deliver the sustainable result.</p>
                     <h3> About Teka Samuha Nepal</h3>
-                    <p>  
+                    <p>
                         Teka Samuha Nepal (TSN) is a non- governmental, non-profit organization run by a group of
                         committed professionals dedicated for biodiversity conservation and sustainable living. It is
                         registered in District Administration Office (DAO) Kathmandu since 1997 (B.S. 2054) and
