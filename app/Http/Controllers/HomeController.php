@@ -71,7 +71,7 @@ class HomeController extends Controller
             $page_type = null;
         }
 // / for page return-------
-        //  return $page_type;
+         //return $page_type;
         if($page_type=="Folder Gallery")
         {
             $view = 'website.pages.folder';

@@ -4508,6 +4508,8 @@ Breadcrumbs layout two
   }
 
   .folder-text{
+    color: #000;
+    text-align: left;
     max-width: 75%;
   }
   @keyframes open {
