@@ -13,7 +13,7 @@
                                 About Teka Samuha Nepal
                             </h2>
 
-                        @php echo $normal->short_content; @endphp
+                        {{-- @php echo $normal->short_content; @endphp --}}
                             {{-- <h3>Who We Are?</h3>
                             <p>Teka Samuha Nepal (TSN) is a non- governmental, non-profit organization dedicated for
                                 biodiversity conservation and sustainable living.</p>
@@ -71,7 +71,7 @@
                                 </figure>
                             @endif
                             <h4>{{ $page->nav_name }}</h4>
-                            <p>{!! $page->short_content !!}</p>
+                            {{-- <p>{!! $page->long_content !!}</p> --}}
                         </div>
                     </div>
                 </div>

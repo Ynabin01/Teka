@@ -12,7 +12,11 @@
                                 </h2>
 
                             </div>
-                            <p>{!! $about->short_content !!}</p>
+                            <p>Teka Samuha Nepal is a non-profit organization formally registered in District
+                                Administration Office Kathmandu in 1997 with the motive to initiate environment
+                                awareness campaign through building local capacities in children, youth and adults.</p>
+
+                            {{-- <p>{!! $about->long_content !!}</p> --}}
                         </div>
                     </section>
                 </div>
@@ -22,9 +26,9 @@
                         <h3 class="widget-title">Menu</h3>
                         <div class="menu-useful-links-container">
                             <ul id="menu-useful-links" class="menu">
-                                @foreach($menus as $menu)
+                                @foreach ($menus as $menu)
                                     <li>
-                                        <a href="{{route('pages',$menu->alias)}}">{{$menu->nav_name}}</a>
+                                        <a href="{{ route('pages', $menu->alias) }}">{{ $menu->nav_name }}</a>
                                     </li>
                                 @endforeach
                             </ul>
@@ -39,12 +43,13 @@
                                 <li>
                                     <div class="post-image">
                                         <a href="#">
-                                            <img src="{{asset('website/assets/images/recent-post-1.jpg')}}" alt="recent post" width="80"
-                                                 height="80">
+                                            <img src="{{ asset('website/assets/images/recent-post-1.jpg') }}"
+                                                alt="recent post" width="80" height="80">
                                         </a>
                                     </div>
                                     <div class="post-info">
-                                        <a href="#"><span class="post-title">It showed a lady fitted out with</span></a>
+                                        <a href="#"><span class="post-title">It showed a lady fitted out
+                                                with</span></a>
                                         <p class="date"><i class="far fa-clock"></i>
                                             Dec 31 </p>
                                     </div>
@@ -52,12 +57,13 @@
                                 <li>
                                     <div class="post-image">
                                         <a href="#">
-                                            <img src="{{asset('website/assets/images/recent-post-2.jpg')}}" alt="recent post" width="80"
-                                                 height="80">
+                                            <img src="{{ asset('website/assets/images/recent-post-2.jpg') }}"
+                                                alt="recent post" width="80" height="80">
                                         </a>
                                     </div>
                                     <div class="post-info">
-                                        <a href="#"><span class="post-title">It showed a lady fitted out with</span></a>
+                                        <a href="#"><span class="post-title">It showed a lady fitted out
+                                                with</span></a>
                                         <p class="date"><i class="far fa-clock"></i>
                                             Dec 31 </p>
                                     </div>
