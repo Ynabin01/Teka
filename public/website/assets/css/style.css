@@ -4556,8 +4556,11 @@ Breadcrumbs layout two
     transition: transform 0.15s ease 0s;
     -webkit-transform: scale3d(1, 1, 1);
     transform: scale3d(1, 1, 1);
-    height: 100%;
+    min-height: 260px;
+    max-height: 260px;
     width: 100%;
+    min-width: 348px;
+    object-fit: cover;
 }
 .gallery-view .item a:hover > img {
     -webkit-transform: scale3d(1.1, 1.1, 1.1);
@@ -4596,4 +4599,21 @@ Breadcrumbs layout two
 #lightgallery .item{
     display: inline-block;
     margin-bottom: 30px;
+    overflow: hidden;
+}
+@media (max-width: 767px) {
+    .gallery-view .row {
+        display: block;
+    }
+    #lightgallery .item{
+        display: inline-block;
+        margin-bottom: 30px;
+        overflow: hidden;
+        flex: 100%;
+        max-width: 100%;
+    }
+    .gallery-view .item a > img{
+        min-width: 712px;
+        max-height: auto;
+    }
 }
