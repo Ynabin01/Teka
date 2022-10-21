@@ -90,7 +90,9 @@
     </div>
     <div class="footer-bar">
         <div class="container">
-            <p class=text-center>© 2021 Teka Samuha Nepal is Powered by <a href="#">Radiant InfoTech Nepal</a></p>
+            <p class=text-center>© <script>
+                document.write(new Date().getFullYear())
+            </script> Teka Samuha Nepal is Powered by <a href="#">Radiant InfoTech Nepal</a></p>
         </div>
     </div>
 </footer>
